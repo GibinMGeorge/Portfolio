@@ -10,12 +10,24 @@
 
 body {
     background-color: #c4c9e6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 /* css for the whole body */
 
+main {
+    display: flex;
+    /* Forces elements to the next line if they don't fit */
+    flex-wrap: wrap;
+    margin-top: 2%;
+}
+
 .header {
+    display: flex;
+    /* Forces elements to the next line if they don't fit */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Align items to the space between the header and links */
     padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #2b2a30;
     color: #ffffff;
 }
@@ -23,12 +35,11 @@ body {
 .header h1 {
     display: inline-block;
     font-size: 48px;
+    margin-bottom: 15px; /* Add margin for spacing */
 }
-
 
 .header div {
     padding-top: 15px;
-    margin-right: 20px;
     float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
@@ -36,11 +47,12 @@ body {
 
 .header div ul {
     list-style-type: none;
+    display: flex; /* Make the list items flex containers */
 }
 
 .header div ul li {
-    display: inline-block;
     margin-left: 25px;
+    margin-bottom: 10px; /* Add margin for spacing */
 }
 
 a {
@@ -56,7 +68,7 @@ p {
 
 .GMG {
     height: 300px;
-    width: auto;
+    width: 100%; /* Make image width 100% */
     margin-bottom: 25px;
     background-image: url("gmg_cover.png");
     background-size: cover;
@@ -65,62 +77,85 @@ p {
 
 /* class hero contains the image and it's styling*/
 
+.card {
+    flex: 1 0 0;
+    padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px; /* Add margin for spacing */
+}
+  
+.card img {
+    width: 100%;
+}
+
+.card header {
+    padding: 20px;
+    background: #13293d;
+    color: #fff;
+}
+
 .float-left {
     float: left;
-    margin-right: 350px;
+    margin-right: 25px;
 }
 
 .float-right {
     float: right;
-    margin-left: 350px;
+    margin-left: 25px;
 }
-
-/* float left and right is used to position the images accordingly in the division */
 
 .content {
-    width: auto;
-    display: inline-block;
-    margin-left: 20px;
+    width: 100%;
+    margin-left: 0;
 }
 
-
-#about_me {
-    font-size: 36px;
-    display: inline-block;
-}
-
-#about_contents {
-    font-size: 36px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#my_works {
-    font-size: 36px;
-    display: inline-block;
-}
-
+#about_me,
+#my_works,
 #contact_me {
     font-size: 36px;
-    display: inline-block;
+    margin-bottom: 15px; /* Add margin for spacing */
+}
+
+#about_contents,
+#works_contents,
+#contact_contents {
+    padding: 20px;
+    clear: both;
+    width: 100%; /* Make content width 100% on small screens */
 }
 
 #contact_me div ul li {
     display: inline-block;
-    margin-left: 25px;
+    color: #2b2a30;
+    font-size: 20px;
+    margin-bottom: 10px; /* Add margin for spacing */
 }
 
-#contact_contents {
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#contact_contents a {
+#contact_me a{
     color: #2b2a30;
-    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Change flex direction to column for responsiveness */
+        align-items: flex-end; /* Align items to the end on smaller screens */
+    }
+
+    .header div {
+        margin-top: 15px; /* Add margin at the top for spacing */
+        float: none; /* Remove float on small screens */
+    }
+
+    .header div ul {
+        flex-direction: column; /* Change flex direction to column for responsiveness */
+    }
+
+    .header div ul li {
+        margin-left: 0;
+        margin-bottom: 15px; /* Increase margin for spacing on small screens */
+    }
 }
