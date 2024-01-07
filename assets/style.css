@@ -1,5 +1,4 @@
 /* Global CSS */
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -7,26 +6,22 @@
 }
 
 /* Element Selector*/
-
 body {
     background-color: #c4c9e6;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* css for the whole body */
-
+/* CSS for the whole body */
 main {
     display: flex;
-    /* Forces elements to the next line if they don't fit */
     flex-wrap: wrap;
     margin-top: 2%;
 }
 
 .header {
     display: flex;
-    /* Forces elements to the next line if they don't fit */
     flex-wrap: wrap;
-    justify-content: space-between; /* Align items to the space between the header and links */
+    justify-content: space-between;
     padding: 20px;
     background-color: #2b2a30;
     color: #ffffff;
@@ -35,7 +30,7 @@ main {
 .header h1 {
     display: inline-block;
     font-size: 48px;
-    margin-bottom: 15px; /* Add margin for spacing */
+    margin-bottom: 15px;
 }
 
 .header div {
@@ -47,12 +42,12 @@ main {
 
 .header div ul {
     list-style-type: none;
-    display: flex; /* Make the list items flex containers */
+    display: flex;
 }
 
 .header div ul li {
     margin-left: 25px;
-    margin-bottom: 10px; /* Add margin for spacing */
+    margin-bottom: 10px;
 }
 
 a {
@@ -60,53 +55,74 @@ a {
     text-decoration: none;
 }
 
-/* upto here for header navigation bar */
+/* Up to here for the header navigation bar */
 
 p {
     font-size: 16px;
 }
 
 .GMG {
+    display: flex;
+    flex-wrap: wrap;
     height: 300px;
-    width: 100%; /* Make image width 100% */
+    width: 100%;
     margin-bottom: 25px;
     background-image: url("gmg_cover.png");
     background-size: cover;
     background-position: center;
 }
 
-/* class hero contains the image and it's styling*/
-
-/* Styling for buttons (similar to cards) */
-button {
-    display: inline-block;
+/* Styling for grid items */
+.grid-item {
     box-sizing: border-box;
-    width: calc(33.33% - 20px); /* Adjust the width of the buttons for responsiveness */
+    width: calc(33.33% - 20px);
     margin: 10px;
     text-align: center;
     border-style: solid;
-    border-width: 1px;
-    background: none; /* Remove background color */
-    cursor: pointer; /* Change cursor to pointer for better UX */
+    border-width: 5px;
+    border-color: #2b2a30;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
 
-button img {
+.grid-item img {
     width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-button header {
+.grid-item section {
     padding: 20px;
-    background: #13293d;
+    background: rgba(43, 42, 48, 0.8);
     color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Adjustments for hover effect (optional) */
-button:hover {
-    border-color: #13293d; /* Change border color on hover */
-    transform: scale(1.25); /* Add a slight scale effect on hover */
+/* Adjustments for hover effect */
+.grid-item:hover {
+    border-color: #2b2a30;
+    transform: scale(1.05);
 }
 
+.grid-item:focus {
+    border-color: #2b2a30;
+    transform: scale(1.25);
+}
 
+.grid-item:hover section {
+    opacity: 1;
+}
+
+.grid-item:focus section {
+    opacity: 1;
+}
 
 .float-left {
     float: left;
@@ -127,7 +143,7 @@ button:hover {
 #my_works,
 #contact_me {
     font-size: 36px;
-    margin-bottom: 15px; /* Add margin for spacing */
+    margin-bottom: 15px;
 }
 
 #about_contents,
@@ -135,17 +151,17 @@ button:hover {
 #contact_contents {
     padding: 20px;
     clear: both;
-    width: 100%; /* Make content width 100% on small screens */
+    width: 100%;
 }
 
 #contact_me div ul li {
     display: inline-block;
     color: #2b2a30;
     font-size: 20px;
-    margin-bottom: 10px; /* Add margin for spacing */
+    margin-bottom: 10px;
 }
 
-#contact_me a{
+#contact_me a {
     color: #2b2a30;
     font-weight: bold;
     font-size: 30px;
@@ -153,26 +169,32 @@ button:hover {
 
 @media screen and (max-width: 768px) {
     .header {
-        flex-direction: column; /* Change flex direction to column for responsiveness */
-        align-items: flex-end; /* Align items to the end on smaller screens */
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .header div {
-        margin-top: 15px; /* Add margin at the top for spacing */
-        float: none; /* Remove float on small screens */
+        margin-top: 15px;
+        float: none;
     }
 
     .header div ul {
-        flex-direction: column; /* Change flex direction to column for responsiveness */
+        flex-direction: column;
     }
 
     .header div ul li {
         margin-left: 0;
-        margin-bottom: 15px; /* Increase margin for spacing on small screens */
+        margin-bottom: 15px;
     }
 
-    .card {
-        width: 100%; /* Make cards full width on smaller screens */
-        margin: 10px 0; /* Adjust margin for spacing */
+    .grid-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .grid-item {
+        width: 50%;
+        align-items: center;
     }
 }
