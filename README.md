@@ -1,6 +1,6 @@
 # Portfolio
 
-The Portfolio includes a navigation bar where it is having an avatar, links to sections about me, my work, and how to contact me.
+The Portfolio includes a navigation bar where it is having an avatar, links to sections about me, my work, how to contact me and my resume.
 This Portfolio is created as part of the Module 2 Challenge.
 
 index.html defines the structure of the webpage.
@@ -18,7 +18,7 @@ CSS selectors and properties are consolidated and organized.
 
 CSS file is properly commented.
 
-* The URL of the deployed application - 
+* The URL of the deployed application - https://gibinmgeorge.github.io/Portfolio
 
 * The URL of the GitHub repository - https://github.com/GibinMGeorge/Portfolio
 
