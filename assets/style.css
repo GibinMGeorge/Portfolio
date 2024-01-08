@@ -5,18 +5,14 @@
     margin: 0;
 }
 
-/* Element Selector*/
+/* CSS for the whole body */
+
 body {
     background-color: #e4e7f9;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* CSS for the whole body */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2%;
-}
+/* CSS for the header navigation bar */
 
 .header {
     display: flex;
@@ -66,7 +62,11 @@ a {
     /* margin-right: 30px; */
 }
 
-/* Up to here for the header navigation bar */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+}
 
 p {
     display: flex;
@@ -163,12 +163,16 @@ p {
     margin-left: 0;
 }
 
+/* adjustments for headings */
+
 #about_me,
 #my_works,
 #contact_me {
     font-size: 36px;
     margin-bottom: 15px;
 }
+
+/* adjustments for contents in the headings */
 
 #about_contents,
 #works_contents,
@@ -197,6 +201,8 @@ p {
     text-decoration: underline;
     margin-right: 50px;
 }
+
+/* media screen adjustments */
 
 @media screen and (max-width: 768px) {
     .header {
