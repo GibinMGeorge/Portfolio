@@ -25,16 +25,16 @@ CSS file is properly commented.
 
 screenshots - 
 
-(assets/S1.png)
+![screen ](assets/S1.png)
 
 
-(assets/S2.png)
+![screen ](assets/S2.png)
 
 
-(assets/S3.png)
+![screen ](assets/S3.png)
 
 
-(assets/S4.png)
+![screen ](assets/S4.png)
 
 
-(assets/S5.png)
+![screen ](assets/S5.png)
